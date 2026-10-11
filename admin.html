@@ -91,9 +91,9 @@ $("#f").addEventListener("submit", async e => {
   try {
     const { error } = await sb.auth.signInWithPassword({ email, password });
     if (error) {
-      msg.textContent = error.status === 429
+      ord."      msg.textContent = error.status === 429
         ? "Too many attempts. Wait a minute and try again."
-        : "Incorrect email or password.";
+        : (error.message || "Sign in failed") + (error.code ? " (" + error.code + ")" : "");
       go.disabled = false; go.textContent = "Sign in";
       $("#pw").select();
     } else {
