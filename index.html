@@ -131,7 +131,7 @@ dialog::backdrop{background:rgba(20,4,10,.75)}
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script type="module">
 const SB_URL="https://bnwblndxsjblqephxjnv.supabase.co",SB_KEY="sb_publishable_reqxktF5AnT-PYnMj5DfDw_LnOofuAc";
-const WA="905375869395";const CUR="$";   /* WA: your WhatsApp number, digits only */
+const WA="905375869395";const CUR="₺";   /* WA: your WhatsApp number, digits only */
 const DEF=[
 {id:1,b:"Lattafa",n:"Khamrah",c:"arabic",g:"Unisex",ml:100,p:38,t:"#b8742f",top:"Cinnamon, nutmeg",heart:"Dates, praline",base:"Vanilla, tonka, amberwood"},
 {id:2,b:"Al Haramain",n:"Amber Oud Gold",c:"arabic",g:"Unisex",ml:120,p:55,t:"#c9a227",top:"Bergamot, melon",heart:"Rose, jasmine",base:"Amber, oud, musk"},
@@ -147,7 +147,7 @@ const DEF=[
 const CATS=[["all","All"],["arabic","Arabic"],["designer","Designer"],["gift","Gift sets"],["new","New Arrivals"]];let NEW=[4,9,10,11],BEST=[1,2,6,7];
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const money=v=>CUR+Number(v).toLocaleString("en-US");
+const money=v=>CUR+Number(v).toLocaleString("tr-TR",{minimumFractionDigits:v%1?2:0,maximumFractionDigits:2});
 let P=DEF,cat="all",cart={};
 try{cart=JSON.parse(localStorage.getItem("rp-cart")||"{}")}catch(e){}
 let tt;const toast=m=>{const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),2200)};
